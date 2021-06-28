@@ -23,7 +23,7 @@ Post.init(
             }
         },
         user_username: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'user',
