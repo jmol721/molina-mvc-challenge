@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 
 // get user by ID
 router.get('/:id', (req, res) => {
+    console.log(req.body);
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
@@ -24,9 +25,9 @@ router.get('/:id', (req, res) => {
             {
                 model: Post,
                 attributes: ['id', 'post_title', 'post_content', 'user_id'],
-                include: {
-                    model: Comment
-                }
+                // include: {
+                //     model: Comment
+                // }
             }
         ]
     })
