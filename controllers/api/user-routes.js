@@ -21,15 +21,15 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: [
-            {
-                model: Post,
-                attributes: ['id', 'post_title', 'post_content', 'user_id'],
-                // include: {
-                //     model: Comment
-                // }
-            }
-        ]
+        // include: [
+        //     {
+        //         model: Post,
+        //         attributes: ['id', 'post_title', 'post_content', 'user_id'],
+        //         include: {
+        //             model: Comment
+        //         }
+        //     }
+        // ]
     })
     .then(dbUserData => {
         if (!dbUserData) {
